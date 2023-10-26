@@ -1,0 +1,20 @@
+<div class="d-flex pages my-3 align-item-center justify-content-center" *ngIf="category === 'all' "  >
+    <div *ngFor="let item of [].constructor(totalPage); let i = index" >
+       <button class="btn btn-warning mx-3" (click)="getAllNews(i+1)" > <strong>{{i+1}}  </strong> </button>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-4 my-3 d-flex justify-content-center align-item-center" *ngFor="let a of articlePage">
+        <div class="card " style="width: 16vw; border-radius: 10px;">
+            <img src={{a.urlToImage}} class="card-img-top " alt="Image Not Available">
+            <div class="card-body">
+                <h4 class="card-title content-text" style="color: #db6464;">{{a.title}}</h4>
+                <strong class="card-title">{{a.author | uppercase}} </strong>
+                <p class="card-text content-text"> {{a.content}} </p>
+                <a href="#" class="btn btn-primary" (click)="readFullStory(a.url)"  >Read Full Story</a>
+            </div>
+        </div>
+    </div>
+</div>

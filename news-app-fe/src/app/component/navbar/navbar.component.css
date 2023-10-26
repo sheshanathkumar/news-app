@@ -1,0 +1,9 @@
+a {
+    padding: 10px 15px;
+}
+
+a:hover {
+    background-color:#646464;
+    cursor: pointer;
+    border-radius: 5px;
+}
