@@ -1,3 +1,3 @@
 export  class constant {
-    static allNews : string = 'article'
+    static allNews : string = 'news'
 }

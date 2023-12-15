@@ -9,6 +9,12 @@ import { SharedService } from 'src/app/service/shared.service';
 export class NavbarComponent {
 
   category = "";
+  allCategory = ["TOP",
+  "ENTERTAINMENT",
+  "TECHNOLOGY",
+  "BUSINESS",
+  "SPORTS",
+  "POLITICS"];
 
   constructor(private shared : SharedService) {
 
