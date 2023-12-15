@@ -40,9 +40,6 @@ public class Article implements Serializable {
     @JsonProperty("publishedAt")
     private Timestamp publishedAt;
 
-    @JsonProperty("content")
-    private String content;
-
     @JsonProperty("category")
     private String category;
 
@@ -54,7 +51,6 @@ public class Article implements Serializable {
                 .category(category.getName())
                 .source(source.getName())
                 .author(obj.getAuthor())
-                .content(obj.getContent())
                 .description(obj.getDescription())
                 .publishedAt(obj.getPublishedAt())
                 .title(obj.getTitle())

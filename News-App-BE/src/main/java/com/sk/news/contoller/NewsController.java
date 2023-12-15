@@ -15,16 +15,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -57,14 +57,13 @@ public class NewsController {
         log.info("fetching all news");
         try {
 
-            Pageable page = Pageable.ofSize(100);
-            Page<ArticleEntity> pages = articleRepo.findAll(page);
-            int totalPage = pages.getTotalPages();
 
+
+            int totalPage = -99;
             HashMap<String, String> map = new HashMap<>();
             map.put("totalPage", "" + totalPage);
 
-            List<ArticleEntity> articleEntities = pages.get().collect(Collectors.toList());
+            List<ArticleEntity> articleEntities = articleRepo.fetchTop10records ();
 
             List<Article> articles = new ArrayList<>();
             articleEntities.forEach((x) -> {

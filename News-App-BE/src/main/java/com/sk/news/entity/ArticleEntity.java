@@ -40,9 +40,6 @@ public class ArticleEntity {
     @Column(name = "published_at")
     private Timestamp publishedAt;
 
-    @Column(name = "content")
-    private String content;
-
     @Column(name = "source_id")
     private Integer sourceId;
 
@@ -60,7 +57,6 @@ public class ArticleEntity {
                 .description(article.getAuthor())
                 .urlImage(article.getUrlImage())
                 .publishedAt(article.getPublishedAt())
-                .content(article.getContent())
                 .build();
     }
 

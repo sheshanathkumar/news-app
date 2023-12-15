@@ -116,7 +116,6 @@ public class NewsAppApplication {
 							.url(x.getLink())
 							.title(x.getTitle())
 							.publishedAt(Timestamp.valueOf(x.getDate()))
-							.content(x.getContent())
 							.description(x.getDescription())
 							.author("NA")
 							.sourceId(sourceMap.getOrDefault(x.getSourceId(), 1))

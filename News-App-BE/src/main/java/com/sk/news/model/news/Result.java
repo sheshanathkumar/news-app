@@ -26,9 +26,6 @@ public class Result {
     @JsonProperty(value = "description")
     private String description;
 
-    @JsonProperty(value = "content")
-    private String content;
-
     @JsonProperty(value = "pubDate")
     private String date;
 
