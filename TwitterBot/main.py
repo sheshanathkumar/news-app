@@ -14,8 +14,8 @@ api = tweepy.API(auth)
 
 # client.create_tweet(text="Tweet from pc")
 
-PER_20_MIN = 1 * 60 * 20
-PER_5_MIN = 1 * 60 * 5
+EVERY_10_MIN = 1 * 60 * 10
+EVERY_5_MIN = 1 * 60 * 5
 
 
 def postToTwitter(allContent: list):
@@ -28,10 +28,10 @@ def postToTwitter(allContent: list):
             print(i)
             client.create_tweet(text=i)
             print("-------------POSTED----------")
-            time.sleep(PER_20_MIN)
+            time.sleep(EVERY_10_MIN)
         except Exception as e:
             print(e)
-    time.sleep(PER_20_MIN)
+    time.sleep(EVERY_5_MIN)
     fetchNews("News fetched at {}".format(time.strftime('%X %x %Z')))
 
 
@@ -69,7 +69,7 @@ def fetchNews(name):
                     print(e)
         print("fetched content size ", len(allContent))
     except Exception as e:
-        print("Service Unavailable! + Server will start soon!\n {}".format(e))
+        print("Service Unavailable! Server will start soon!\n {}".format(e))
         time.sleep(180)
         fetchNews("News fetched at {}".format(time.strftime('%X %x %Z')))
     postToTwitter(allContent)
